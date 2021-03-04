@@ -1,0 +1,13 @@
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug\Agenda.exe.config
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug\Agenda.exe
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug\Agenda.pdb
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.csprojAssemblyReference.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.Properties.Resources.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.csproj.GenerateResource.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.exe
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.pdb
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaDashboardform.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaNovoCliente.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaClientes.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaComentario.resources
