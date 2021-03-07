@@ -38,28 +38,30 @@ namespace Agenda
             // 
             // labelNome
             // 
-            this.labelNome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelNome.AutoSize = true;
+            this.labelNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNome.Font = new System.Drawing.Font("Nirmala UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNome.Location = new System.Drawing.Point(52, 39);
+            this.labelNome.Location = new System.Drawing.Point(0, 39);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(621, 65);
+            this.labelNome.Size = new System.Drawing.Size(723, 65);
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "PrimeiroNome UltimoNome";
+            this.labelNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTitulo
             // 
-            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitulo.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(234, 112);
+            this.labelTitulo.Location = new System.Drawing.Point(0, 104);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(253, 45);
+            this.labelTitulo.Size = new System.Drawing.Size(723, 45);
             this.labelTitulo.TabIndex = 1;
             this.labelTitulo.Text = "Ultimo Trabalho:";
+            this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTitulo.Click += new System.EventHandler(this.labelTitulo_Click);
             // 
             // textBoxComentario
             // 
+            this.textBoxComentario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxComentario.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComentario.Location = new System.Drawing.Point(63, 163);
             this.textBoxComentario.Multiline = true;
@@ -71,6 +73,7 @@ namespace Agenda
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardar.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(278, 481);
             this.btnGuardar.Name = "btnGuardar";

@@ -26,6 +26,17 @@ namespace Agenda
 
         private void btnCriarCliente_Click(object sender, EventArgs e)
         {
+            if (textBoxPrimeiroNome.Text != "" && textBoxUltimoNome.Text != "")
+            {
+                CreateNewClient();
+                SuccessNotification(new AgendaNotification());
+            }
+            else if (textBoxPrimeiroNome.Text == "" && textBoxUltimoNome.Text == "")
+                FailNotification(new AgendaNotification());
+        }
+
+        private void CreateNewClient()
+        {
             String nameFirstLetter = textBoxPrimeiroNome.Text.Substring(0, 1);
             String nameRest = textBoxPrimeiroNome.Text.Substring(1);
             string name = nameFirstLetter.ToUpper() + nameRest.ToLower();
@@ -37,6 +48,43 @@ namespace Agenda
             StreamWriter sw = new StreamWriter(filePath, true);
             sw.WriteLine($"{name},{surname}");
             sw.Close();
+
+            textBoxPrimeiroNome.Text = null;
+            textBoxUltimoNome.Text = null;
+        }
+
+        private Form activeForm = null;
+        public void SuccessNotification(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Top;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        public void FailNotification(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Top;
+            childForm.BackColor = Color.IndianRed;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+            childForm.Controls.OfType<Label>().First().Text = "Erro a Criar Cliente";
         }
     }
 }

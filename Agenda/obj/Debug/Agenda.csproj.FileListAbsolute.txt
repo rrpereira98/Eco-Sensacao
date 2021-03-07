@@ -11,3 +11,4 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaNovoCliente.resources
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaClientes.resources
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaComentario.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaNotification.resources

@@ -30,25 +30,39 @@ namespace Agenda
         private void InitializeComponent()
         {
             this.labelNovoCliente = new System.Windows.Forms.Label();
+            this.btnCriarCliente = new System.Windows.Forms.Button();
             this.labelPrimeiroNome = new System.Windows.Forms.Label();
             this.labelUltimoNome = new System.Windows.Forms.Label();
             this.textBoxPrimeiroNome = new System.Windows.Forms.TextBox();
             this.textBoxUltimoNome = new System.Windows.Forms.TextBox();
-            this.btnCriarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNovoCliente
             // 
+            this.labelNovoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNovoCliente.AutoSize = true;
             this.labelNovoCliente.Font = new System.Drawing.Font("Nirmala UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNovoCliente.Location = new System.Drawing.Point(218, 52);
+            this.labelNovoCliente.Location = new System.Drawing.Point(218, 60);
             this.labelNovoCliente.Name = "labelNovoCliente";
             this.labelNovoCliente.Size = new System.Drawing.Size(303, 65);
             this.labelNovoCliente.TabIndex = 0;
             this.labelNovoCliente.Text = "Novo Cliente";
             // 
+            // btnCriarCliente
+            // 
+            this.btnCriarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCriarCliente.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriarCliente.Location = new System.Drawing.Point(238, 444);
+            this.btnCriarCliente.Name = "btnCriarCliente";
+            this.btnCriarCliente.Size = new System.Drawing.Size(273, 65);
+            this.btnCriarCliente.TabIndex = 2;
+            this.btnCriarCliente.Text = "Criar Cliente";
+            this.btnCriarCliente.UseVisualStyleBackColor = true;
+            this.btnCriarCliente.Click += new System.EventHandler(this.btnCriarCliente_Click);
+            // 
             // labelPrimeiroNome
             // 
+            this.labelPrimeiroNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPrimeiroNome.AutoSize = true;
             this.labelPrimeiroNome.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrimeiroNome.Location = new System.Drawing.Point(128, 235);
@@ -59,6 +73,7 @@ namespace Agenda
             // 
             // labelUltimoNome
             // 
+            this.labelUltimoNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelUltimoNome.AutoSize = true;
             this.labelUltimoNome.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUltimoNome.Location = new System.Drawing.Point(128, 345);
@@ -69,6 +84,7 @@ namespace Agenda
             // 
             // textBoxPrimeiroNome
             // 
+            this.textBoxPrimeiroNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPrimeiroNome.Font = new System.Drawing.Font("Nirmala UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrimeiroNome.Location = new System.Drawing.Point(360, 232);
             this.textBoxPrimeiroNome.Name = "textBoxPrimeiroNome";
@@ -78,23 +94,13 @@ namespace Agenda
             // 
             // textBoxUltimoNome
             // 
+            this.textBoxUltimoNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxUltimoNome.Font = new System.Drawing.Font("Nirmala UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUltimoNome.Location = new System.Drawing.Point(360, 342);
             this.textBoxUltimoNome.Name = "textBoxUltimoNome";
             this.textBoxUltimoNome.Size = new System.Drawing.Size(246, 46);
             this.textBoxUltimoNome.TabIndex = 1;
             this.textBoxUltimoNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnCriarCliente
-            // 
-            this.btnCriarCliente.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriarCliente.Location = new System.Drawing.Point(238, 444);
-            this.btnCriarCliente.Name = "btnCriarCliente";
-            this.btnCriarCliente.Size = new System.Drawing.Size(273, 65);
-            this.btnCriarCliente.TabIndex = 2;
-            this.btnCriarCliente.Text = "Criar Cliente";
-            this.btnCriarCliente.UseVisualStyleBackColor = true;
-            this.btnCriarCliente.Click += new System.EventHandler(this.btnCriarCliente_Click);
             // 
             // AgendaNovoCliente
             // 
@@ -118,10 +124,10 @@ namespace Agenda
         #endregion
 
         private System.Windows.Forms.Label labelNovoCliente;
+        private System.Windows.Forms.Button btnCriarCliente;
         private System.Windows.Forms.Label labelPrimeiroNome;
         private System.Windows.Forms.Label labelUltimoNome;
         private System.Windows.Forms.TextBox textBoxPrimeiroNome;
         private System.Windows.Forms.TextBox textBoxUltimoNome;
-        private System.Windows.Forms.Button btnCriarCliente;
     }
 }

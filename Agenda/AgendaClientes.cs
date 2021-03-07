@@ -26,14 +26,15 @@ namespace Agenda
 
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
-            groupBox1.Controls.Clear();
+            panelClientBox.Controls.Clear();
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
             string[] nameEntries = textBoxPesquisa.Text.Split(' ');
 
-            if (textBoxPesquisa.Text == " ")
+            if (textBoxPesquisa.Text == " " || textBoxPesquisa.Text == "")
             {
-                textBoxPesquisa.Text = "Tens de escrever algo";
+                FailNotification(new AgendaNotification());
+                return;
             }
             else if (nameEntries.Length == 1)
             {
@@ -50,17 +51,20 @@ namespace Agenda
                 name = nameFirstLetter.ToUpper() + nameRest.ToLower() + " " + surnameFirstLetter.ToUpper() + surnameRest.ToLower();
             }
 
-            foreach (string line in lines)
+            if (nameEntries.Length == 1 || nameEntries.Length == 2)
             {
-                string[] entries = name.Split(' ');
+                foreach (string line in lines)
+                {
+                    string[] entries = name.Split(' ');
 
-                if (line.Contains(entries[0]) && entries.Length == 1)
-                {
-                    entries = CreateBtn(line);
-                }
-                else if (line.Contains(entries[0]) && line.Contains(entries[1]) && entries.Length == 2)
-                {
-                    entries = CreateBtn(line);
+                    if (line.Contains(entries[0]) && entries.Length == 1)
+                    {
+                        entries = CreateBtn(line);
+                    }
+                    else if (line.Contains(entries[0]) && line.Contains(entries[1]) && entries.Length == 2)
+                    {
+                        entries = CreateBtn(line);
+                    }
                 }
             }
         }
@@ -89,7 +93,7 @@ namespace Agenda
 
             btn.Click += new EventHandler(button_Click);
 
-            groupBox1.Controls.Add(btn);
+            panelClientBox.Controls.Add(btn);
             return entries;
         }
 
@@ -106,12 +110,48 @@ namespace Agenda
         protected void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            AgendaComentario agendaComentario = new AgendaComentario(btn.Text);
-            agendaComentario.ShowDialog();
+            //AgendaComentario agendaComentario = new AgendaComentario(btn.Text);
+            //agendaComentario.ShowDialog();
+            openChildForm(new AgendaComentario(btn.Text));
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
         {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+            private void groupBox1_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private Form activeNotification = null;
+        public void FailNotification(Form childForm)
+        {
+            if (activeNotification != null)
+                activeNotification.Close();
+
+            activeNotification = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Top;
+            childForm.BackColor = Color.IndianRed;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+            childForm.Controls.OfType<Label>().First().Text = "Pesquisa Não Pode Estar Vazia";
         }
     }
 }

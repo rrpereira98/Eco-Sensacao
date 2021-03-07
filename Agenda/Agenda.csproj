@@ -70,6 +70,12 @@
     <Compile Include="AgendaComentario.Designer.cs">
       <DependentUpon>AgendaComentario.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgendaNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaNotification.Designer.cs">
+      <DependentUpon>AgendaNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgendaComentario.resx">
       <DependentUpon>AgendaComentario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgendaNotification.resx">
+      <DependentUpon>AgendaNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
