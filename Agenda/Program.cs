@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendaLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace Agenda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initialize the database connections
+            AgendaLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
+
             Application.Run(new AgendaDashboardform());
         }
     }

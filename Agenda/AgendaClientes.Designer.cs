@@ -37,7 +37,7 @@ namespace Agenda
             // 
             // labelTitulo
             // 
-            this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Nirmala UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(156, 63);
@@ -48,7 +48,7 @@ namespace Agenda
             // 
             // textBoxPesquisa
             // 
-            this.textBoxPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxPesquisa.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPesquisa.Location = new System.Drawing.Point(167, 159);
             this.textBoxPesquisa.Name = "textBoxPesquisa";
@@ -57,7 +57,7 @@ namespace Agenda
             // 
             // buttonPesquisar
             // 
-            this.buttonPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonPesquisar.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPesquisar.Location = new System.Drawing.Point(288, 230);
             this.buttonPesquisar.Name = "buttonPesquisar";
@@ -69,11 +69,13 @@ namespace Agenda
             // 
             // panelClientBox
             // 
+            this.panelClientBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelClientBox.AutoScroll = true;
-            this.panelClientBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelClientBox.Location = new System.Drawing.Point(0, 306);
+            this.panelClientBox.Location = new System.Drawing.Point(0, 310);
             this.panelClientBox.Name = "panelClientBox";
-            this.panelClientBox.Size = new System.Drawing.Size(723, 246);
+            this.panelClientBox.Size = new System.Drawing.Size(723, 242);
             this.panelClientBox.TabIndex = 5;
             // 
             // AgendaClientes

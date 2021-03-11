@@ -76,7 +76,6 @@
     <Compile Include="AgendaNotification.Designer.cs">
       <DependentUpon>AgendaNotification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgendaDashboardform.resx">
@@ -125,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_user_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgendaLibrary\AgendaLibrary.csproj">
+      <Project>{c6b570b4-cf77-41d8-b2bf-d211b51d5e57}</Project>
+      <Name>AgendaLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

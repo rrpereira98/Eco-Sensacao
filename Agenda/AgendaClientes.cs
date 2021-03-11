@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgendaLibrary;
+using AgendaLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,75 +15,45 @@ namespace Agenda
 {
     public partial class AgendaClientes : Form
     {
-        string filePath = @"C:\Users\rodri\OneDrive\Ambiente de Trabalho\Clientes.txt";
-        string client;
-        string[] entries;
-        Person newPerson;
-        string name;
+        string firstName;
+        string lastName;
+
+        List<ClientModel> Clients = GlobalConfig.Connection.GetClient_All();
 
         public AgendaClientes()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        void LoadData()
+        {
+            foreach (ClientModel client in Clients)
+            {
+                firstName = client.FirstName;
+                lastName = client.LastName;
+                CreateBtn();
+            }
         }
 
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             panelClientBox.Controls.Clear();
-            List<string> lines = File.ReadAllLines(filePath).ToList();
+            Clients = GlobalConfig.Connection.GetClient_ByFirstName(textBoxPesquisa.Text);
 
-            string[] nameEntries = textBoxPesquisa.Text.Split(' ');
-
-            if (textBoxPesquisa.Text == " " || textBoxPesquisa.Text == "")
+            foreach (ClientModel client in Clients)
             {
-                FailNotification(new AgendaNotification());
-                return;
-            }
-            else if (nameEntries.Length == 1)
-            {
-                String nameFirstLetter = nameEntries[0].Substring(0, 1);
-                String nameRest = nameEntries[0].Substring(1);
-                name = nameFirstLetter.ToUpper() + nameRest.ToLower();
-            }
-            else if (nameEntries.Length == 2)
-            {
-                String nameFirstLetter = nameEntries[0].Substring(0, 1);
-                String nameRest = nameEntries[0].Substring(1);
-                String surnameFirstLetter = nameEntries[1].Substring(0, 1);
-                String surnameRest = nameEntries[1].Substring(1);
-                name = nameFirstLetter.ToUpper() + nameRest.ToLower() + " " + surnameFirstLetter.ToUpper() + surnameRest.ToLower();
-            }
-
-            if (nameEntries.Length == 1 || nameEntries.Length == 2)
-            {
-                foreach (string line in lines)
-                {
-                    string[] entries = name.Split(' ');
-
-                    if (line.Contains(entries[0]) && entries.Length == 1)
-                    {
-                        entries = CreateBtn(line);
-                    }
-                    else if (line.Contains(entries[0]) && line.Contains(entries[1]) && entries.Length == 2)
-                    {
-                        entries = CreateBtn(line);
-                    }
-                }
+                firstName = client.FirstName;
+                lastName = client.LastName;
+                CreateBtn();
             }
         }
 
-        private string[] CreateBtn(string line)
+        private void CreateBtn()
         {
-            string[] entries;
-            client = line;
-
-            entries = client.Split(',');
-            newPerson = new Person();
-            newPerson.FirstName = entries[0];
-            newPerson.LastName = entries[1];
-
             // Make buttons for results
             Button btn = new Button();
-            btn.Name = "btnClient";
+            btn.Name = $"btn_{ firstName }{ lastName }";
             btn.Location = new Point(3, 16);
             btn.Size = new Size(110, 97);
             btn.Dock = DockStyle.Top;
@@ -89,12 +61,11 @@ namespace Agenda
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn.Font = new Font("Nirmala UI", 20);
             btn.TextAlign = ContentAlignment.MiddleCenter;
-            btn.Text = $"{newPerson.FirstName} { newPerson.LastName }";
+            btn.Text = $"{ firstName } { lastName }";
 
             btn.Click += new EventHandler(button_Click);
 
             panelClientBox.Controls.Add(btn);
-            return entries;
         }
 
         private void panelCliente_Paint(object sender, PaintEventArgs e)
@@ -102,16 +73,9 @@ namespace Agenda
 
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         protected void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            //AgendaComentario agendaComentario = new AgendaComentario(btn.Text);
-            //agendaComentario.ShowDialog();
             openChildForm(new AgendaComentario(btn.Text));
         }
 
