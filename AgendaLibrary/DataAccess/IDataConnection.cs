@@ -12,5 +12,8 @@ namespace AgendaLibrary.DataAccess
         ClientModel CreateClient(ClientModel model);
         List<ClientModel> GetClient_All();
         List<ClientModel> GetClient_ByFirstName(string name);
+        CommentModel CreateComment(CommentModel model);
+        List<CommentModel> GetComment_ByClientID(int clientID);
+        void DeleteComment_ByCommentID(int commentID);
     }
 }

@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 
 namespace AgendaLibrary.Models
 {
-    class CommentModel
+    public class CommentModel
     {
         public int CommentID { get; set; }
         public int ClientID { get; set; }
         public string Comment { get; set; }
         public string Date { get; set; }
+
+        public CommentModel()
+        {
+
+        }
+
+        public CommentModel(int clientID, string comment)
+        {
+            ClientID = clientID;
+            Comment = comment;
+        }
     }
 }

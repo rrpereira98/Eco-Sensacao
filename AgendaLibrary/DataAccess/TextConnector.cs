@@ -36,6 +36,16 @@ namespace AgendaLibrary.DataAccess
             return model;
         }
 
+        public CommentModel CreateComment(CommentModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteComment_ByCommentID(int commentID)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ClientModel> GetClients_All()
         {
             throw new NotImplementedException();
@@ -47,6 +57,11 @@ namespace AgendaLibrary.DataAccess
         }
 
         public List<ClientModel> GetClient_ByFirstName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CommentModel> GetComment_ByClientID(int clientID)
         {
             throw new NotImplementedException();
         }

@@ -17,3 +17,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\AgendaUI.csproj.CopyComplete
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug\Dapper.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\bin\Debug\Dapper.xml
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaNovoTrabalho.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaComentarioBox.resources
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\Agenda\obj\Debug\Agenda.AgendaConfirmBox.resources

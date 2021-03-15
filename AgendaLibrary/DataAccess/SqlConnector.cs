@@ -35,6 +35,23 @@ namespace AgendaLibrary.DataAccess
             }
         }
 
+        public CommentModel CreateComment(CommentModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@ClientID", model.ClientID);
+                p.Add("@Comment", model.Comment);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spComment_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.CommentID = p.Get<int>("@id");
+
+                return model;
+            }
+        }
+
         public List<ClientModel> GetClient_All()
         {
             List<ClientModel> output;
@@ -55,6 +72,25 @@ namespace AgendaLibrary.DataAccess
             }
 
             return output;
+        }
+
+        public List<CommentModel> GetComment_ByClientID(int clientID)
+        {
+            List<CommentModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<CommentModel>($"select * from Comment where ClientID = '{clientID}'").ToList();
+            }
+
+            return output;
+        }
+
+        public void DeleteComment_ByCommentID(int commentID)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                connection.Query<CommentModel>($"DELETE FROM Comment WHERE CommentID = '{commentID}'");
+            }
         }
     }
 }
