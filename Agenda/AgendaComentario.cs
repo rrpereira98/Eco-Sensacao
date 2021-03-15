@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgendaLibrary;
+using AgendaLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,25 +16,44 @@ namespace Agenda
 {
     public partial class AgendaComentario : Form
     {
-        string personName;
+        ClientModel model = new ClientModel();
         string filePath = @"C:\Users\rodri\OneDrive\Ambiente de Trabalho\Comentarios.txt";
         private bool wasEdited = false;
 
-        public AgendaComentario(String person)
+        public AgendaComentario(String Client)
         {
             InitializeComponent();
-            personName = person;
-            labelNome.Text = person;
+            LoadClientData(Client);
+        }
 
-            List<string> lines = File.ReadAllLines(filePath).ToList();
+        private void LoadClientData(string Client)
+        {
+            string[] entries = Client.Split(' ');
 
-            foreach (string line in lines)
+            model = GlobalConfig.Connection.GetClient_ByFirstName(entries[0])[0];
+            labelNome.Text = $"{ model.FirstName } { model.LastName }";
+
+            List<CommentModel> comments = GlobalConfig.Connection.GetComment_ByClientID(model.ClientID);
+            foreach (CommentModel comment in comments)
             {
-                if (line.Contains(personName))
-                {
-                    string[] entries = line.Split('£');
-                    textBoxComentario.Text = entries[1];
-                }
+                Form form = new AgendaComentarioBox(comment, this);
+                form.Name = $"form_{model.ClientID}";
+                form.Dock = DockStyle.Top;
+                form.TopLevel = false;
+                form.FormBorderStyle = FormBorderStyle.None;
+
+                panelGroup.Controls.Add(form);
+                this.Tag = form;
+                form.BringToFront();
+                form.Show();
+
+                Panel margin = new Panel();
+                margin.Size = new Size(50, 3);
+                margin.BackColor = Color.FromArgb(1, 225, 225, 225);
+                margin.Dock = DockStyle.Top;
+                panelGroup.Controls.Add(margin);
+                margin.BringToFront();
+                margin.Show();
             }
         }
 
@@ -48,37 +69,23 @@ namespace Agenda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            openChildForm(new AgendaNovoTrabalho(model));
+        }
 
-            if (File.ReadAllText(filePath).Contains(personName))
-            {
-                string clientLine = "111";
-                List<string> lines = File.ReadAllLines(filePath).ToList();
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
 
-                foreach (string line in lines)
-                {
-                    if (line.Contains(personName))
-                    {
-                        clientLine = line;
-                    }
-                }
-
-                string strFile = File.ReadAllText(filePath);
-                strFile = Regex.Replace(strFile, clientLine, $"{personName}£{textBoxComentario.Text}");
-                File.WriteAllText(filePath, strFile);
-
-                wasEdited = true;
-
-            }
-            
-
-            if (!wasEdited)
-            {
-                StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{personName}£{textBoxComentario.Text}");
-                sw.Close();
-            }
-
-            this.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

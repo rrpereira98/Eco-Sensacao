@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda", "Agenda\Agenda.csproj", "{12CE7C76-B835-40F1-8474-E172E02DBF38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaUI", "Agenda\AgendaUI.csproj", "{12CE7C76-B835-40F1-8474-E172E02DBF38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaLibrary", "AgendaLibrary\AgendaLibrary.csproj", "{C6B570B4-CF77-41D8-B2BF-D211B51D5E57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{12CE7C76-B835-40F1-8474-E172E02DBF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12CE7C76-B835-40F1-8474-E172E02DBF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12CE7C76-B835-40F1-8474-E172E02DBF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B570B4-CF77-41D8-B2BF-D211B51D5E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B570B4-CF77-41D8-B2BF-D211B51D5E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B570B4-CF77-41D8-B2BF-D211B51D5E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B570B4-CF77-41D8-B2BF-D211B51D5E57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

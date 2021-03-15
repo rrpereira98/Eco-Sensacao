@@ -29,11 +29,10 @@ namespace Agenda
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendaComentario));
             this.labelNome = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.textBoxComentario = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.panelGroup = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // labelNome
@@ -59,18 +58,6 @@ namespace Agenda
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTitulo.Click += new System.EventHandler(this.labelTitulo_Click);
             // 
-            // textBoxComentario
-            // 
-            this.textBoxComentario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxComentario.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxComentario.Location = new System.Drawing.Point(63, 163);
-            this.textBoxComentario.Multiline = true;
-            this.textBoxComentario.Name = "textBoxComentario";
-            this.textBoxComentario.Size = new System.Drawing.Size(610, 304);
-            this.textBoxComentario.TabIndex = 2;
-            this.textBoxComentario.Text = resources.GetString("textBoxComentario.Text");
-            this.textBoxComentario.TextChanged += new System.EventHandler(this.textBoxComentario_TextChanged);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -79,24 +66,32 @@ namespace Agenda
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(204, 49);
             this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Novo Trabalho";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // panelGroup
+            // 
+            this.panelGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelGroup.AutoScroll = true;
+            this.panelGroup.Location = new System.Drawing.Point(12, 187);
+            this.panelGroup.Name = "panelGroup";
+            this.panelGroup.Size = new System.Drawing.Size(699, 260);
+            this.panelGroup.TabIndex = 4;
             // 
             // AgendaComentario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 552);
+            this.Controls.Add(this.panelGroup);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.textBoxComentario);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.labelNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgendaComentario";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -104,7 +99,7 @@ namespace Agenda
 
         private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.TextBox textBoxComentario;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Panel panelGroup;
     }
 }

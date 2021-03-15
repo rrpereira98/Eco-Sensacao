@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda
+namespace AgendaLibrary
 {
-    public class Person
+    public enum DatabaseType
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        Sql,
+        TextFile
     }
 }

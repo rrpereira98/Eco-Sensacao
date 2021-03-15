@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using AgendaLibrary;
+using AgendaLibrary.Models;
+using AgendaLibrary.DataAccess;
 
 namespace Agenda
 {
@@ -26,13 +29,39 @@ namespace Agenda
 
         private void btnCriarCliente_Click(object sender, EventArgs e)
         {
-            if (textBoxPrimeiroNome.Text != "" && textBoxUltimoNome.Text != "")
+            //if (textBoxPrimeiroNome.Text != "" && textBoxUltimoNome.Text != "")
+            //{
+            //    CreateNewClient();
+            //    SuccessNotification(new AgendaNotification());
+            //}
+            //else if (textBoxPrimeiroNome.Text == "" && textBoxUltimoNome.Text == "")
+            //    FailNotification(new AgendaNotification());
+            if (ValidateForm())
             {
-                CreateNewClient();
+                ClientModel model = new ClientModel(textBoxPrimeiroNome.Text, textBoxUltimoNome.Text);
+
+                
+                GlobalConfig.Connection.CreateClient(model);
+                
+
+                textBoxPrimeiroNome.Text = "";
+                textBoxUltimoNome.Text = "";
                 SuccessNotification(new AgendaNotification());
             }
-            else if (textBoxPrimeiroNome.Text == "" && textBoxUltimoNome.Text == "")
+            else
+            {
                 FailNotification(new AgendaNotification());
+            }
+        }
+
+        bool ValidateForm()
+        {
+            bool output = true;
+
+            if (textBoxPrimeiroNome.Text.Length == 0 || textBoxUltimoNome.Text.Length == 0)
+                output = false;
+
+            return output;
         }
 
         private void CreateNewClient()

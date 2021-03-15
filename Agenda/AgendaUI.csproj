@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaComentarioBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaComentarioBox.Designer.cs">
+      <DependentUpon>AgendaComentarioBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgendaConfirmBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaConfirmBox.Designer.cs">
+      <DependentUpon>AgendaConfirmBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgendaDashboardform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,9 +88,20 @@
     <Compile Include="AgendaNotification.Designer.cs">
       <DependentUpon>AgendaNotification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
+    <Compile Include="AgendaNovoTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaNovoTrabalho.Designer.cs">
+      <DependentUpon>AgendaNovoTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgendaComentarioBox.resx">
+      <DependentUpon>AgendaComentarioBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgendaConfirmBox.resx">
+      <DependentUpon>AgendaConfirmBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgendaDashboardform.resx">
       <DependentUpon>AgendaDashboardform.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgendaNotification.resx">
       <DependentUpon>AgendaNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgendaNovoTrabalho.resx">
+      <DependentUpon>AgendaNovoTrabalho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,6 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_user_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgendaLibrary\AgendaLibrary.csproj">
+      <Project>{c6b570b4-cf77-41d8-b2bf-d211b51d5e57}</Project>
+      <Name>AgendaLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
