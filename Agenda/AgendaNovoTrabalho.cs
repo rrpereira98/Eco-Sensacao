@@ -29,7 +29,7 @@ namespace Agenda
                 CommentModel comment = new CommentModel(Client.ClientID, textBoxComentario.Text);
                 GlobalConfig.Connection.CreateComment(comment);
 
-                openChildForm(new AgendaComentario($"{ Client.FirstName } { Client.LastName }"));
+                openChildForm(new AgendaComentario(Client.ClientID.ToString()));
             }
         }
 

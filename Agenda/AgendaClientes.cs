@@ -17,6 +17,7 @@ namespace Agenda
     {
         string firstName;
         string lastName;
+        string id;
 
         List<ClientModel> Clients = GlobalConfig.Connection.GetClient_All();
 
@@ -32,6 +33,7 @@ namespace Agenda
             {
                 firstName = client.FirstName;
                 lastName = client.LastName;
+                id = client.ClientID.ToString();
                 CreateBtn();
             }
         }
@@ -45,6 +47,7 @@ namespace Agenda
             {
                 firstName = client.FirstName;
                 lastName = client.LastName;
+                id = client.ClientID.ToString();
                 CreateBtn();
             }
         }
@@ -53,15 +56,17 @@ namespace Agenda
         {
             // Make buttons for results
             Button btn = new Button();
-            btn.Name = $"btn_{ firstName }{ lastName }";
+            btn.Name = $"{ firstName }{ lastName }";
             btn.Location = new Point(3, 16);
             btn.Size = new Size(110, 97);
             btn.Dock = DockStyle.Top;
-            btn.Image = Agenda.Properties.Resources.icons8_user_60px;
+            btn.Image = Agenda.Properties.Resources.icons8_user_60px_1;
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btn.Font = new Font("Nirmala UI", 20);
-            btn.TextAlign = ContentAlignment.MiddleCenter;
-            btn.Text = $"{ firstName } { lastName }";
+            btn.Font = new Font("Nirmala UI", 22);
+            btn.TextAlign = ContentAlignment.MiddleLeft;
+            btn.ImageAlign = ContentAlignment.MiddleRight;
+            btn.Text = $"{id}  { firstName } { lastName }";
+            btn.Tag = id;
 
             btn.Click += new EventHandler(button_Click);
 
@@ -76,7 +81,7 @@ namespace Agenda
         protected void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            openChildForm(new AgendaComentario(btn.Text));
+            openChildForm(new AgendaComentario(btn.Tag.ToString()));
         }
 
         private Form activeForm = null;
