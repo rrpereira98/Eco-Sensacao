@@ -25,6 +25,7 @@ namespace AgendaLibrary.DataAccess
                 var p = new DynamicParameters();
                 p.Add("@FirstName", model.FirstName);
                 p.Add("@LastName", model.LastName);
+                p.Add("@PhoneNumber", model.PhoneNumber);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spClient_Insert", p, commandType:CommandType.StoredProcedure);
@@ -90,6 +91,25 @@ namespace AgendaLibrary.DataAccess
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 connection.Query<CommentModel>($"DELETE FROM Comment WHERE CommentID = '{commentID}'");
+            }
+        }
+
+        public List<ClientModel> GetClient_ByClientID(int clientID)
+        {
+            List<ClientModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<ClientModel>($"select * from Client where ClientID = '{clientID}'").ToList();
+            }
+
+            return output;
+        }
+
+        public void DeleteCLient_ByClientID(int clientID)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                connection.Query<CommentModel>($"DELETE FROM Client WHERE ClientID = '{clientID}'");
             }
         }
     }

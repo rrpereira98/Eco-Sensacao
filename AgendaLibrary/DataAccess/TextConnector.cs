@@ -41,6 +41,11 @@ namespace AgendaLibrary.DataAccess
             throw new NotImplementedException();
         }
 
+        public void DeleteCLient_ByClientID(int clientID)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteComment_ByCommentID(int commentID)
         {
             throw new NotImplementedException();
@@ -52,6 +57,11 @@ namespace AgendaLibrary.DataAccess
         }
 
         public List<ClientModel> GetClient_All()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ClientModel> GetClient_ByClientID(int clientID)
         {
             throw new NotImplementedException();
         }

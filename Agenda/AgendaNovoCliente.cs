@@ -29,16 +29,9 @@ namespace Agenda
 
         private void btnCriarCliente_Click(object sender, EventArgs e)
         {
-            //if (textBoxPrimeiroNome.Text != "" && textBoxUltimoNome.Text != "")
-            //{
-            //    CreateNewClient();
-            //    SuccessNotification(new AgendaNotification());
-            //}
-            //else if (textBoxPrimeiroNome.Text == "" && textBoxUltimoNome.Text == "")
-            //    FailNotification(new AgendaNotification());
             if (ValidateForm())
             {
-                ClientModel model = new ClientModel(textBoxPrimeiroNome.Text, textBoxUltimoNome.Text);
+                ClientModel model = new ClientModel(textBoxPrimeiroNome.Text, textBoxUltimoNome.Text, textBoxMobile.Text);
 
                 
                 GlobalConfig.Connection.CreateClient(model);
@@ -46,6 +39,7 @@ namespace Agenda
 
                 textBoxPrimeiroNome.Text = "";
                 textBoxUltimoNome.Text = "";
+                textBoxMobile.Text = "";
                 SuccessNotification(new AgendaNotification());
             }
             else
@@ -59,6 +53,10 @@ namespace Agenda
             bool output = true;
 
             if (textBoxPrimeiroNome.Text.Length == 0 || textBoxUltimoNome.Text.Length == 0)
+                output = false;
+            
+            int value;
+            if (!int.TryParse(textBoxMobile.Text, out value))
                 output = false;
 
             return output;
