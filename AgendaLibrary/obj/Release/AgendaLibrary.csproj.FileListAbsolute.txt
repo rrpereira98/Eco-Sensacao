@@ -1,0 +1,9 @@
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\bin\Release\AgendaLibrary.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\bin\Release\AgendaLibrary.pdb
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\bin\Release\Dapper.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\bin\Release\Dapper.xml
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\obj\Release\AgendaLibrary.csprojAssemblyReference.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\obj\Release\AgendaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\obj\Release\AgendaLibrary.csproj.CopyComplete
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\obj\Release\AgendaLibrary.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\Agenda\AgendaLibrary\obj\Release\AgendaLibrary.pdb

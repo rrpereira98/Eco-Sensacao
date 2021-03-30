@@ -35,6 +35,7 @@ namespace Agenda
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelLogo = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +43,7 @@ namespace Agenda
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.btnNovoCliente);
             this.panel1.Controls.Add(this.btnClientes);
             this.panel1.Controls.Add(this.panel2);
@@ -114,6 +116,20 @@ namespace Agenda
             this.panelChildForm.Size = new System.Drawing.Size(723, 552);
             this.panelChildForm.TabIndex = 1;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Location = new System.Drawing.Point(3, 537);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(205, 12);
+            this.buttonExit.TabIndex = 0;
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // AgendaDashboardform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +158,7 @@ namespace Agenda
         private System.Windows.Forms.Label labelLogo;
         private System.Windows.Forms.Button btnNovoCliente;
         private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

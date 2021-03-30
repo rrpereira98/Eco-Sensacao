@@ -37,18 +37,19 @@ namespace Agenda
             // textBoxComentario
             // 
             this.textBoxComentario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxComentario.Location = new System.Drawing.Point(82, 187);
+            this.textBoxComentario.Font = new System.Drawing.Font("Nirmala UI", 14.25F);
+            this.textBoxComentario.Location = new System.Drawing.Point(12, 215);
             this.textBoxComentario.MaxLength = 300;
             this.textBoxComentario.Multiline = true;
             this.textBoxComentario.Name = "textBoxComentario";
-            this.textBoxComentario.Size = new System.Drawing.Size(560, 97);
+            this.textBoxComentario.Size = new System.Drawing.Size(1006, 203);
             this.textBoxComentario.TabIndex = 0;
             // 
             // buttonGuardar
             // 
             this.buttonGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonGuardar.Font = new System.Drawing.Font("Nirmala UI", 20.25F);
-            this.buttonGuardar.Location = new System.Drawing.Point(285, 448);
+            this.buttonGuardar.Location = new System.Drawing.Point(439, 476);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(154, 57);
             this.buttonGuardar.TabIndex = 1;
@@ -60,9 +61,9 @@ namespace Agenda
             // 
             this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.Font = new System.Drawing.Font("Nirmala UI", 36F);
-            this.labelTitle.Location = new System.Drawing.Point(-1, 32);
+            this.labelTitle.Location = new System.Drawing.Point(-1, 60);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(725, 71);
+            this.labelTitle.Size = new System.Drawing.Size(1032, 71);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Novo Trabalho";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,7 +73,7 @@ namespace Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 552);
+            this.ClientSize = new System.Drawing.Size(1030, 608);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.textBoxComentario);

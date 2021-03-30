@@ -41,7 +41,20 @@ namespace Agenda
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             panelClientBox.Controls.Clear();
-            Clients = GlobalConfig.Connection.GetClient_ByFirstName(textBoxPesquisa.Text);
+
+            int value;
+            if (textBoxPesquisa.Text.Length == 0)
+            {
+                Clients = GlobalConfig.Connection.GetClient_All();
+            }
+            else if (int.TryParse(textBoxPesquisa.Text, out value))
+            {
+                Clients = GlobalConfig.Connection.GetClient_ByClientID(int.Parse(textBoxPesquisa.Text));
+            }
+            else
+            {
+                Clients = GlobalConfig.Connection.GetClient_ByFirstName(textBoxPesquisa.Text);
+            }
 
             foreach (ClientModel client in Clients)
             {
@@ -50,6 +63,8 @@ namespace Agenda
                 id = client.ClientID.ToString();
                 CreateBtn();
             }
+
+            textBoxPesquisa.Text = "";
         }
 
         private void CreateBtn()
@@ -121,6 +136,17 @@ namespace Agenda
             childForm.Show();
 
             childForm.Controls.OfType<Label>().First().Text = "Pesquisa Não Pode Estar Vazia";
+        }
+
+        private void textBoxPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonPesquisar.PerformClick();
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

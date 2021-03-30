@@ -54,6 +54,7 @@ namespace Agenda
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(395, 46);
             this.textBoxPesquisa.TabIndex = 2;
+            this.textBoxPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPesquisa_KeyDown);
             // 
             // buttonPesquisar
             // 
